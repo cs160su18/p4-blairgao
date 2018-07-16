@@ -4,33 +4,237 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>P4 Drawing</title>
+    <title>P4  Interaction</title>
 
     <link rel="stylesheet" type="text/css" href="{% static 'draw/vendor/bootstrap/css/bootstrap.min.css' %}">
     <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'draw/vendor/paper/paper-full.min.js' %}"></script>
 
     <style type="text/css">
+      .title {
+        height: 95px;
+        width: 50%;
+        padding-top: 20px;        
+        font-size: 36px;
+        font-variant: small-caps;
+        text-align: center;
+        background-color: #FEFEE0;
+      }
+      .table {
+        height: 10%;
+        width: 50%; 
+        background-color: #FEFEE0;
+        font-size: 26px;
+        font-variant: small-caps;
+      }
+      .one {
+        height: 60px;
+        width: 50%; 
+        background-color: #8EF9A3;
+        font-size: 36px;
+        font-variant: small-caps;
+      }
+      .two {
+        height: 60px;
+        width: 50%; 
+        background-color: #FBD592;
+        font-size: 36px;
+        font-variant: small-caps;
+      }
+      .three {
+        height: 60px;
+        width: 50%; 
+        background-color: #F75A5A;
+        font-size: 36px;
+        font-variant: small-caps;
+      }
+      
+      .square {
+         padding: 15px;
+         margin: 10px 10px;
+         cursor: pointer;
+         border-radius: 12px;
+         border: 6px solid #4CAF50; /* Green */
+         display: flex; 
+}
+      .circle {
+       top:0;
+       padding: 15px;
+       cursor: pointer;
+       border-radius: 60%;
+       border: 6px solid #4CAF50; /* Green */
+       align-items: center;
+       position:relative;
+       margin: 10px auto;
+       display: flex; 
+       
+      }
+      .a {
+       background-color: #f4511e; 
+      }
+      .b {
+       background-color: #3D5BF2; 
+      }
+      .c {
+       background-color: #3DF243; 
+      }
+      .d {
+       background-color: #F4EC03; 
+      }
+    
+      .button {
+        display: inline-block;
+        border-radius: 4px;
+       
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 15px;
+        padding: 10px;
+        width: 90px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+        vertical-align:middle;
+      }
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+      
+       
     </style>
+    </style>
+  
 
 </head>
 <body>
     <!-- You may change the dimensions of this canvas -->
-    <canvas id="myCanvas" width="750px" height="750px"></canvas>
+   
+  <div class="title"> Service Requests </div>
+  <div class="table"> <p> Preping &nbsp;&nbsp;&nbsp;Table # &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Done &emsp;&emsp; ID</p> </div>
+  
+  <div class="three"> 
+    <div class="row">
+      <div class="col-sm-2" > <button class="square" onclick="this.style.background = '#f4511e'"> </button>   </div>
+      <div class="col-sm-2" > 9 </div>
+      <div class="col-sm-5" > <b>5</b> water</div>
+      <div class="col-sm-1" > <button class="circle" onclick="this.style.background = '#f4511e'" id = '1'> </button>  </div>
+      <div class="col-sm-2"> <button class="a button" style="vertical-align:middle"><span> Alice </span></button> </div>
+    </div> 
+  </div>
+  
+   <div class="three"> 
+    <div class="row">
+      <div class="col-sm-2"> <button class="square" onclick="this.style.background = '#f4511e'"> </button>   </div>
+      <div class="col-sm-2"> 9 </div>
+      <div class="col-sm-5"> <b>3</b> coke</div>
+      <div class="col-sm-1"> <button class="circle" onclick="this.style.background = '#f4511e'"> </button>  </div>
+      <div class="col-sm-2"> <button class="b button" style="vertical-align:middle"><span> Bob </span></button> </div>
+    </div> 
+  </div>
+  
+   <div class="two"> 
+    <div class="row">
+      <div class="col-sm-2"> <button class="square" onclick="this.style.background = '#f4511e'"> </button>   </div>
+      <div class="col-sm-2"> 5 </div>
+      <div class="col-sm-5"> <b>1</b> coke</div>
+      <div class="col-sm-1"> <button class="circle" onclick="this.style.background = '#f4511e'" > </button>  </div>
+      <div class="col-sm-2"> <button class="c button" style="vertical-align:middle"><span> Cathy </span></button> </div>
+    </div> 
+  </div>
+  <div class="one"> 
+    <div class="row">
+      <div class="col-sm-2"> <button class="square" onclick="this.style.background = '#f4511e'"> </button>   </div>
+      <div class="col-sm-2"> 10 </div>
+      <div class="col-sm-5"> <b>4</b> water</div>
+      <div class="col-sm-1"> <button class="circle" onclick="this.style.background = '#f4511e'"> </button>  </div>
+      <div class="col-sm-2"> <button class="d button" style="vertical-align:middle"><span> Dean </span></button> </div>
+    </div> 
+  </div>
+  <div class="one"> 
+    <div class="row">
+      <div class="col-sm-2"> <button class="square" onclick="this.style.background = '#f4511e'"> </button>   </div>
+      <div class="col-sm-2"> 2 </div>
+      <div class="col-sm-5"> <b>2</b> water</div>
+      <div class="col-sm-1"> <button class="circle" onclick="this.style.background = '#f4511e'"> </button>  </div>
+      
+    </div> 
+  </div>
+  <div class="one"> 
+    <div class="row">
+      <div class="col-sm-2"> <button class="square" onclick="this.style.background = '#f4511e'"> </button>   </div>
+      <div class="col-sm-2"> 5 </div>
+      <div class="col-sm-5"> <b>2</b> coke </div>
+      <div class="col-sm-1"> <button class="circle" onclick="this.style.background = '#f4511e'"> </button>  </div>
+      
+    </div> 
+  </div>
+   <div class="one"> 
+    <div class="row">
+      <div class="col-sm-2"> <button class="square" onclick="this.style.background = '#f4511e'"> </button>   </div>
+      <div class="col-sm-2"> 3 </div>
+      <div class="col-sm-5"> <b>6</b> ice water</div>
+      <div class="col-sm-1"> <button class="circle" onclick="this.style.background = '#f4511e'"> </button>  </div>
+     
+    </div> 
+  </div>
+  
+   <div class="two"> 
+    <div class="row">
+      <div class="col-sm-2"> <button class="square" onclick="this.style.background = '#f4511e'"> </button>   </div>
+      <div class="col-sm-2"> 11 </div>
+      <div class="col-sm-5"> <b>1</b> ice water </div>
+      <div class="col-sm-1"> <button class="circle" onclick="this.style.background = '#f4511e'"> </button>  </div>
+      
+    </div> 
+  </div>
+  
+  
+  
+  
+   <div class="two"> 
+    <div class="row">
+      <div class="col-sm-2"> <button class="square" onclick="this.style.background = '#f4511e'"> </button>   </div>
+      <div class="col-sm-2"> 19 </div>
+      <div class="col-sm-5"> <b>5</b> coke</div>
+      <div class="col-sm-1"> <button class="circle" onclick="this.style.background = '#f4511e'"> </button>  </div>
+      
+    </div> 
+  </div>
+  
+  
+ 
+
 </body>
 <script>
-
-    // setting up the canvas and one paper tool
-    var canvas = document.getElementById('myCanvas');
-    paper.setup(canvas);
-    var tool = new paper.Tool();
-
-    // getting the URL (you may want to use for Exercise 3)
-    var url = window.location.href;
-
-    // var socket = new WebSocket(
-    //     'ws://your url here:8765/');
-
-
+$( "#1" ).click(function() {
+  $( "#r1" ).remove();
+});
+  
+  $( "#2" ).click(function() {
+  $( "#r2" ).remove();
+});
 </script>
 </html>
